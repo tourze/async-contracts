@@ -24,12 +24,6 @@ class ConcreteAsyncMessageTest extends TestCase
         $this->assertNotSame($message1, $message2);
     }
 
-    public function testInstanceOfCheck(): void
-    {
-        $message = new ConcreteAsyncMessage();
-
-        $this->assertTrue($message instanceof AsyncMessageInterface);
-    }
 }
 
 class ConcreteAsyncMessage implements AsyncMessageInterface
