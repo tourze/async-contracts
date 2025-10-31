@@ -3,11 +3,12 @@
   "description": "异步",
   "license": "MIT",
   "require": {
-    "php": "^8.1"
+    "php": "^8.2",
+    "composer-runtime-api": "^2.0"
   },
   "require-dev": {
     "phpstan/phpstan": "^2.1",
-    "phpunit/phpunit": "^10.0"
+    "phpunit/phpunit": "^11.5"
   },
   "autoload": {
     "psr-4": {

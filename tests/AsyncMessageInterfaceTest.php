@@ -1,11 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tourze\AsyncContracts\Tests;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Tourze\AsyncContracts\AsyncMessageInterface;
 
-class AsyncMessageInterfaceTest extends TestCase
+/**
+ * @internal
+ */
+#[CoversClass(AsyncMessageInterface::class)]
+final class AsyncMessageInterfaceTest extends TestCase
 {
     public function testInterfaceExists(): void
     {
@@ -39,6 +46,6 @@ class AsyncMessageInterfaceTest extends TestCase
     {
         $reflection = new \ReflectionClass(AsyncMessageInterface::class);
 
-        $this->assertSame('Tourze\\AsyncContracts', $reflection->getNamespaceName());
+        $this->assertSame('Tourze\AsyncContracts', $reflection->getNamespaceName());
     }
 }

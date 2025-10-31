@@ -1,11 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tourze\AsyncContracts\Tests\Implementation;
 
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Tourze\AsyncContracts\AsyncMessageInterface;
 
-class ConcreteAsyncMessageTest extends TestCase
+/**
+ * @internal
+ */
+#[CoversClass(ConcreteAsyncMessage::class)]
+final class ConcreteAsyncMessageTest extends TestCase
 {
     public function testConcreteImplementation(): void
     {
@@ -21,15 +28,6 @@ class ConcreteAsyncMessageTest extends TestCase
 
         $this->assertInstanceOf(AsyncMessageInterface::class, $message1);
         $this->assertInstanceOf(AsyncMessageInterface::class, $message2);
-        $this->assertNotSame($message1, $message2);
+        $this->assertNotEquals($message1, $message2);
     }
-
-}
-
-class ConcreteAsyncMessage implements AsyncMessageInterface
-{
-}
-
-class AnotherAsyncMessage implements AsyncMessageInterface
-{
 }
